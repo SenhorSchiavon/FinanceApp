@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:finance_app/commons/constants/app_colors.dart';
 import 'package:finance_app/commons/constants/app_text_styles.dart';
+import 'package:finance_app/commons/constants/routes.dart';
 import 'package:finance_app/features/sign_in/sign_in_controller.dart';
 import 'package:finance_app/features/sign_in/sign_in_state.dart';
 import 'package:finance_app/locator.dart';
-import 'package:finance_app/services/mock_auth_service.dart';
 import 'package:finance_app/widgets/custom_bottom_sheet.dart';
 import 'package:finance_app/widgets/custom_circular_progress_indicator.dart';
 import 'package:finance_app/widgets/custom_text_formfield.dart';
@@ -44,7 +44,7 @@ class _SignInPageState extends State<SignInPage> {
       }
       if(_controller.state is SignInStateSuccess){
         Navigator.pop(context);
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Scaffold(body: Center(child: Text("Nova tela"),),)));
+        Navigator.pushReplacementNamed(context, NamedRoute.home);
       }
       if(_controller.state is SignInStateError){
         Navigator.pop(context);

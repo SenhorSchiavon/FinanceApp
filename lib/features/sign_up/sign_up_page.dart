@@ -3,10 +3,10 @@ import 'dart:developer';
 import 'package:finance_app/commons/constants/app_colors.dart';
 import 'package:finance_app/commons/constants/app_text_styles.dart';
 import 'package:finance_app/commons/constants/routes.dart';
+import 'package:finance_app/features/home/home_page.dart';
 import 'package:finance_app/features/sign_up/sign_up_controller.dart';
 import 'package:finance_app/features/sign_up/sign_up_state.dart';
 import 'package:finance_app/locator.dart';
-import 'package:finance_app/services/mock_auth_service.dart';
 import 'package:finance_app/widgets/custom_bottom_sheet.dart';
 import 'package:finance_app/widgets/custom_circular_progress_indicator.dart';
 import 'package:finance_app/widgets/custom_text_formfield.dart';
@@ -45,7 +45,7 @@ class _SignUpPageState extends State<SignUpPage> {
       }
       if(_controller.state is SignUpSuccessState){
         Navigator.pop(context);
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Scaffold(body: Center(child: Text("Nova tela"),),)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
       }
       if(_controller.state is SignUpErrorState){
         Navigator.pop(context);
@@ -154,4 +154,6 @@ class _SignUpPageState extends State<SignUpPage> {
 
 
 }
+
+
 
