@@ -4,6 +4,7 @@ import 'package:finance_app/commons/constants/app_colors.dart';
 import 'package:finance_app/commons/constants/app_text_styles.dart';
 import 'package:finance_app/features/sign_in/sign_in_controller.dart';
 import 'package:finance_app/features/sign_in/sign_in_state.dart';
+import 'package:finance_app/locator.dart';
 import 'package:finance_app/services/mock_auth_service.dart';
 import 'package:finance_app/widgets/custom_bottom_sheet.dart';
 import 'package:finance_app/widgets/custom_circular_progress_indicator.dart';
@@ -26,7 +27,7 @@ class _SignInPageState extends State<SignInPage> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _controller = SignInController(MockAuthService());
+  final _controller = locator.get<SignInController>();
   void dispose(){
     _passwordController.dispose();
     _nameController.dispose();
@@ -134,7 +135,5 @@ class _SignInPageState extends State<SignInPage> {
       ),
     );
   }
-
-
 }
 
