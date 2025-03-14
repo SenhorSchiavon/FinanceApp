@@ -5,6 +5,7 @@ import 'package:finance_app/commons/constants/app_text_styles.dart';
 import 'package:finance_app/commons/constants/routes.dart';
 import 'package:finance_app/features/sign_up/sign_up_controller.dart';
 import 'package:finance_app/features/sign_up/sign_up_state.dart';
+import 'package:finance_app/locator.dart';
 import 'package:finance_app/services/mock_auth_service.dart';
 import 'package:finance_app/widgets/custom_bottom_sheet.dart';
 import 'package:finance_app/widgets/custom_circular_progress_indicator.dart';
@@ -27,7 +28,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _controller = SignUpController(MockAuthService());
+  final _controller = locator.get<SignUpController>();
   void dispose(){
     _passwordController.dispose();
     _nameController.dispose();
