@@ -8,4 +8,6 @@ abstract class AuthService{
     return Future.delayed(Duration(seconds: 2));
   }
 
+  Future SignOut();
+
 }
